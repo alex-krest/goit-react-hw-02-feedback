@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 
 const FeedbackOptions = props => {
   const {
-    options: { good, neutral, bad },
+    options: { onGood, onNeutral, onBad },
   } = props;
   return (
     <div className="Counter_controls">
-      <button type="button" className="Button_Good" onClick={good}>
+      <button type="button" className="Button_Good" onClick={onGood}>
         Good
       </button>
-      <button type="button" className="Button_Neutral" onClick={neutral}>
+      <button type="button" className="Button_Neutral" onClick={onNeutral}>
         Neutral
       </button>
-      <button type="button" className="Button_Bad" onClick={bad}>
+      <button type="button" className="Button_Bad" onClick={onBad}>
         Bad
       </button>
     </div>
@@ -23,7 +23,42 @@ const FeedbackOptions = props => {
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
-  good: PropTypes.func,
-  neutral: PropTypes.func,
-  bad: PropTypes.func,
+	onGood: PropTypes.func.isRequired,
+	onNeutral: PropTypes.func,
+	onBad: PropTypes.func,
 };
+
+
+// -----------------------------------
+
+
+
+// import PropTypes from 'prop-types';
+// // import s from './FeedbackOptions.module.css';
+
+// const FeedbackOptions = props => {
+//   const {
+//     options: { good, neutral, bad },
+//   } = props;
+//   return (
+//     <div className="Counter_controls">
+//       <button type="button" className="Button_Good" onClick={good}>
+//         Good
+//       </button>
+//       <button type="button" className="Button_Neutral" onClick={neutral}>
+//         Neutral
+//       </button>
+//       <button type="button" className="Button_Bad" onClick={bad}>
+//         Bad
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default FeedbackOptions;
+
+// FeedbackOptions.propTypes = {
+//   good: PropTypes.func,
+//   neutral: PropTypes.func,
+//   bad: PropTypes.func,
+// };
