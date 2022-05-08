@@ -2,7 +2,7 @@ import { Component } from 'react';
 import PropsTypes from 'prop-types';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Statistics from '../Statistics/Statistics';
-import s from './SectionTitle.module.css';
+// import s from './SectionTitle.module.css';
 
 export default class SectionTitle extends Component {
   state = {
