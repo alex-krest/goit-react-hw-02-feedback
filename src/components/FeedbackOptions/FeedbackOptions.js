@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
-// import s from './FeedbackOptions.module.css';
+import s from './FeedbackOptions.module.css';
 
 const FeedbackOptions = props => {
   const {
     options: { onGood, onNeutral, onBad },
   } = props;
   return (
-    <div className="Counter_controls">
-      <button type="button" className="Button_Good" onClick={onGood}>
+    <div className={s.counter}>
+      <button type="button" className={s.button} onClick={onGood}>
         Good
       </button>
-      <button type="button" className="Button_Neutral" onClick={onNeutral}>
+      <button type="button" className={s.button} onClick={onNeutral}>
         Neutral
       </button>
-      <button type="button" className="Button_Bad" onClick={onBad}>
+      <button type="button" className={s.button} onClick={onBad}>
         Bad
       </button>
     </div>

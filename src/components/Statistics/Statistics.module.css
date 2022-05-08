@@ -1,0 +1,14 @@
+.Statistics{
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: start;
+	padding: 25px;
+}
+
+.Statistics_name{
+	margin: 0 auto;
+}
+.Statistics_item{
+	margin-top: 15px;
+}
