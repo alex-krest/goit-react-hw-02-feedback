@@ -1,39 +1,35 @@
-import { Component } from 'react';
 import PropTypes from 'prop-types';
+import Notification from '../Notification';
 import s from './Statistics.module.css';
-import { render } from '@testing-library/react';
 
-export default class Statistics extends Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
+const Statistics = props => {
+  const { good, neutral, bad, total, positivePercentage } = props;
 
-  changeState = () => {
-    this.setState({
-      valueGood: 0,
-      valueNeutral: 0,
-      valueBad: 0,
-    });
-  };
+  return (
+    <div className="Statistics">
+		 {total === 0 ? 
+		 (<Notification message="There is no feedback"/>):
+       (<><span className="Good">
+				  <p>Good: {good} </p>
+			  </span><span className="Neutral">
+					  <p>Neutral: {neutral}</p>
+				  </span><span className="Bad">
+					  <p>Bad: {bad}</p>
+				  </span><span className="Total">
+					  <p>Total: {total}</p>
+				  </span><span className="Positive">
+					  <p>Positive Feedback: {positivePercentage}%</p>
+				  </span></>)}
+    </div>
+	 )
+};
 
-  render() {
-    return (
-      <div className="Statistics">
-        <span className="Good_value">
-          <p>Good:</p>
-          <>{this.state.good}</>
-        </span>
-        <span className="Neutral_value">
-          <p>Neutral:</p>
-          <>{this.state.neutral}</>
-        </span>
-        <span className="Bad_value">
-          <p>Bad:</p>
-          <>{this.state.bad}</>
-        </span>
-      </div>
-    );
-  }
-}
+export default Statistics;
+
+Statistics.protoTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};

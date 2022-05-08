@@ -1,8 +1,13 @@
 import SectionTitle from "./SectionTitle/SectionTitle"
-import FeedbackOptions from "./FeedbackOptions/FeedbackOptions"
-import Statistics from './Statistics/Statistics';
+
+
 
 export const App = () => {
+// 	state = {
+//   good: 0,
+//   neutral: 0,
+//   bad: 0
+// }
   return (
     <div
 		  style={{
@@ -15,23 +20,6 @@ export const App = () => {
       }}
 	  >
 		  <SectionTitle title="Please leave feedback"/>
-		  {/* рендерит секцию с заголовком и детей (children) */}
-		  <FeedbackOptions
-			//   options={ }
-			//   onLeaveFeedback={ }>
-			//   Вынеси блок кнопок в компонент
-		  />
-			  
-			  
-		  <Statistics
-		  //    ОТОБРАЖЕНИЕ СТАТИСТИКИ:
-    //   good={ }
-    //   neutral={ }
-    //   bad={ }
-    //   total={ }
-    //   positivePercentage={ }
-		  />
-		  
 		  
     </div>
   );
