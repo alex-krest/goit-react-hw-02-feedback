@@ -3,7 +3,7 @@ import s from './FeedbackOptions.module.css';
 
 const FeedbackOptions = props => {
   const {
-    options: { onGood, onNeutral, onBad },
+	onLeaveFeedback: { onGood, onNeutral, onBad }
   } = props;
   return (
     <div className={s.counter}>
@@ -23,9 +23,9 @@ const FeedbackOptions = props => {
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
-	onGood: PropTypes.func,
-	onNeutral: PropTypes.func,
-	onBad: PropTypes.func,
+	options:PropTypes.objectOf(
+	  PropTypes.func.isRequired,
+	)
 };
 
 

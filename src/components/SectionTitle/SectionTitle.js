@@ -1,11 +1,11 @@
 import PropsTypes from 'prop-types';
 // import s from './SectionTitle.module.css';
 
-const SectionTitle=(props)=>{
-	const { title } = props;
+const SectionTitle=({ title, children })=>{
     return (
       <section className="Counter">
-        <h2 className="Counter_name">{title}</h2>
+			 <h2 className="Counter_name">{title}</h2>
+			 {children}
       </section>
     );
   }

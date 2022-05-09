@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import Notification from '../Notification/Notification';
 import s from './Statistics.module.css';
 
 const Statistics = props => {
@@ -8,10 +7,6 @@ const Statistics = props => {
   return (
 	  <div className={s.Statistics}>
 		<h2 className={s.Statistics_name}>Statistics</h2>
-      {total === 0 ? (
-        <Notification message="There is no feedback" />
-      ) : (
-        <>
           <span className="Good">Good: {good}
           </span>
           <span className={s.Statistics_item}>Neutral: {neutral}
@@ -22,8 +17,8 @@ const Statistics = props => {
           </span>
           <span className={s.Statistics_item}>Positive Feedback: {positivePercentage}%
           </span>
-        </>
-      )}
+        {/* </>
+      )} */}
     </div>
   );
 };
