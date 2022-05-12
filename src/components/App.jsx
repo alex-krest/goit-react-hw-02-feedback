@@ -6,33 +6,43 @@ import Notification from './Notification/Notification';
 
 
 
+
  export default class App extends Component{
 	state = {
   good: 0,
   neutral: 0,
   bad: 0
 	}
-	// option=Object.keys(this.state)
-	 
-	//  onLeaveFeedback = () =>
-	//  { this.option.map((id)=>[option] : [prevState.option] + 1 )}
-	// }
-	 
-  addGood = () => {
-    this.setState(prevState => {
-		 return { good: prevState.good + 1 };
-    });
-  };
-  addNeutral = () => {
-    this.setState(prevState => {
-      return { neutral: prevState.neutral + 1 };
-    });
-  };
-  addBad = () => {
-    this.setState(prevState => {
-      return { bad: prevState.bad + 1 };
-    });
-  };
+	options=Object.keys(this.state)
+	//  ----------------------------------
+	 onLeaveFeedback = (options) => {
+		 this.setState(prevState=>{
+			 return {
+				 [options]: prevState[options] + 1
+			 }
+		 }
+		 )
+	 }
+	//  onLeaveFeedback = (event) =>{
+	// 	this.setState(prevState=>({[event.target.name]:prevState[event.target.name]+1}))
+	//   }
+
+	//  ----------------------------------
+//   addGood = () => {
+//     this.setState(prevState => {
+// 		 return { good: prevState.good + 1 };
+//     });
+//   };
+//   addNeutral = () => {
+//     this.setState(prevState => {
+//       return { neutral: prevState.neutral + 1 };
+//     });
+//   };
+//   addBad = () => {
+//     this.setState(prevState => {
+//       return { bad: prevState.bad + 1 };
+//     });
+//   };
 	 
 	 
   countTotalFeedback = () => {
@@ -41,12 +51,9 @@ import Notification from './Notification/Notification';
   positivePercentage = () => {
     return (( this.state.good/this.countTotalFeedback() ) * 100).toFixed(2);
   };
-	
-	 
 	 
 	 render() {
-		
-	 return (
+		 return (
     <div
 		  style={{
         height: '100vh',
@@ -61,11 +68,8 @@ import Notification from './Notification/Notification';
 			 <SectionTitle
 				 title="Please leave feedback" >
 				 <FeedbackOptions
-				 onLeaveFeedback={{
-					onGood: this.addGood,
-					onNeutral: this.addNeutral,
-					onBad:this.addBad,
-				} }
+				 options={this.options}
+				 onLeaveFeedback={this.onLeaveFeedback}
 				 />
 				 {this.countTotalFeedback() === 0 ? (
 				 <Notification message="There is no feedback" />) :
