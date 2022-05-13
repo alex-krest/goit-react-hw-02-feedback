@@ -23,28 +23,6 @@ import Notification from './Notification/Notification';
 		 }
 		 )
 	 }
-	//  onLeaveFeedback = (event) =>{
-	// 	this.setState(prevState=>({[event.target.name]:prevState[event.target.name]+1}))
-	//   }
-
-	//  ----------------------------------
-//   addGood = () => {
-//     this.setState(prevState => {
-// 		 return { good: prevState.good + 1 };
-//     });
-//   };
-//   addNeutral = () => {
-//     this.setState(prevState => {
-//       return { neutral: prevState.neutral + 1 };
-//     });
-//   };
-//   addBad = () => {
-//     this.setState(prevState => {
-//       return { bad: prevState.bad + 1 };
-//     });
-//   };
-	 
-	 
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
